@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV - Noor Mudassir</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    .download-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #26a69a;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .container {
+      width: 800px;
+      margin: 20px auto;
+      background: #fff;
+      display: flex;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .left-column {
+      width: 30%;
+      background-color: #26a69a;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .left-column img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .left-column h1 {
+      margin: 10px 0 20px;
+      font-size: 24px;
+    }
+
+    .left-column ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    .left-column ul li {
+      margin: 10px 0;
+      font-size: 14px;
+    }
+
+    .left-column ul li span {
+      margin-right: 10px;
+    }
+
+    .left-column .section {
+      margin-top: 30px;
+      text-align: left;
+    }
+
+    .left-column .section h2 {
+      color: #fff;
+      font-size: 18px;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 5px;
+      margin-top: 0;
+    }
+
+    .left-column .section ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      font-size: 14px;
+    }
+
+    .right-column {
+      width: 70%;
+      padding: 20px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section h2 {
+      color: #26a69a;
+      font-size: 20px;
+      border-bottom: 2px solid #26a69a;
+      padding-bottom: 5px;
+      margin-top: 0;
+    }
+
+    .section p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    .section ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      font-size: 14px;
+    }
+
+    .section h3 {
+      margin: 10px 0 5px;
+      font-size: 16px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="download-btn" onclick="downloadPDF()">Download PDF</button>
+
+  <div id="cv" class="container">
+    <div class="left-column">
+      <img src="profile.jpeg" alt="Profile Picture" />
+      <h1>Noor Mudassir</h1>
+      <ul>
+        <li><span>🏠</span> House #101, Sector 32/B, Korangum, Karachi</li>
+        <li><span>📞</span> 0311-2329120 <br/>------ 0321-8291830
+                                                </li>
+        <li><span>📧</span> Add your email here</li>
+        <li><span>📅</span> 17-Dec-1998</li>
+        <li><span>🌐</span> Pakistani</li>
+        <li><span>👤</span> Single</li>
+      </ul>
+
+      <div class="section">
+        <h2>SKILLS</h2>
+        <ul>
+          <li>ICU Equipment Handling</li>
+          <li>Patient Monitoring</li>
+          <li>Emergency Response</li>
+          <li>Infection Control</li>
+          <li>Patient Care Assistance</li>
+          <li>Team Collaboration</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="right-column">
+      <div class="section">
+        <h2>PROFESSIONAL SUMMARY</h2>
+        <p>Dedicated and compassionate healthcare professional with over five years of hands-on experience, including 1 year as a Nurse aid and 4 years as an ICU technician. Trained from reputed institutions and committed to delivering patient-centered care under pressure in critical healthcare environments.</p>
+      </div>
+
+      <div class="section">
+        <h2>WORK EXPERIENCE</h2>
+        <h3>ICU Technician</h3>
+        <p>Blessing Science Institute, Mehmoodabad</p>
+        <p>2019 - Present</p>
+        <ul>
+          <li>Provided technical support in ICU including monitoring vital signs, equipment handling, and emergency response.</li>
+          <li>Collaborated with physicians and nurses in patient care.</li>
+        </ul>
+
+        <h3>Nurse Aid</h3>
+        <p>Jinnah Medical Institute</p>
+        <p>2018 - 2019</p>
+        <ul>
+          <li>Assisted patients with hygiene, mobility, and daily activities.</li>
+          <li>Reported patient conditions to supervisors and maintained clean environments.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>EDUCATION</h2>
+        <p>Intermediate (Pre-Medical)</p>
+        <p>Karachi Board - 2017</p>
+        <p>Matriculation (Science)</p>
+        <p>Karachi Board - 2014</p>
+      </div>
+      <div class="section">
+        <h2>REFERENCE</h2>
+        <P>will be furnished on time</P>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function downloadPDF() {
+      const element = document.getElementById('cv');
+      const opt = {
+        margin:       0,
+        filename:     'Noor_Mudassir_CV.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    }
+  </script>
+
+</body>
+</html>
